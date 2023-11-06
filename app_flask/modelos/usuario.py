@@ -23,6 +23,20 @@ class Usuario:
             usuario = Usuario(renglon)
             lista_usuarios.append(usuario)
         return lista_usuarios
+    
+    @classmethod
+    def seleccionar_uno(cls, datos):
+        query = """ 
+                SELECT *
+                FROM usuarios
+                WHERE id = %(id)s;
+                """
+        resultado = connectToMySQL("esquema_usuarios").query_db(query, datos)
+        print(resultado)
+        if len(resultado) != 0:
+            usuario = Usuario(resultado[0])
+            return usuario
+        return None
 
     @classmethod
     def agregar_uno(cls,data):
@@ -32,3 +46,20 @@ class Usuario:
                 """
         resultado = connectToMySQL('esquema_usuarios').query_db(query,data)
         return resultado
+    
+    @classmethod
+    def editar_uno(cls, datos):
+        query = """
+                UPDATE usuarios
+                SET nombre = %(nombre)s, apellido = %(apellido)s, email = %(email)s
+                WHERE id =%(id)s
+                """
+        return connectToMySQL('esquema_usuarios').query_db(query,datos)
+    
+    @classmethod
+    def eliminar_uno(cls,datos):
+        query = """
+                DELETE FROM usuarios
+                WHERE id = %(id)s;
+                """
+        return connectToMySQL('esquema_usuarios').query_db(query,datos)

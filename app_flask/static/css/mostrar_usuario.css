@@ -7,24 +7,25 @@ body{
     flex-direction: column;
     align-items: center;
 }
+.info-contenedor{
+    border: 2px black solid;
+    padding: 30px;
+}
 .titulo{
     display: flex;
-    gap: 300px;
+    gap: 250px;
 }
-form{
+#botones{
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 20px;
+    gap: 350px;
+    margin-top: 20px;
 }
-input{
-    font-size: 20px;
-}
-button{
+
+.boton{
+    width: 100px;
     height: 50px;
-    background-color: cornflowerblue;
     color: white;
+    background-color: cornflowerblue;
     border: none;
     cursor: pointer;
-    font-size: 20px;
 }

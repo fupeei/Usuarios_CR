@@ -6,10 +6,10 @@
         <title>Usuarios CR</title>
     </head>
     <body>
-        <section class="titulo">
-            <h1>Todos los Usuarios!</h1>
-        </section>
         <section>
+            <div class="titulo">
+                <h1>Todos los Usuarios!</h1>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -18,6 +18,7 @@
                         <th>Apellido</th>
                         <th>Email</th>
                         <th>Fecha de Creación</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,13 +29,24 @@
                         <td>{{usuario.apellido}}</td>
                         <td>{{usuario.email}}</td>
                         <td>{{usuario.created_at}}</td>
+                        <td id="botones">
+                            <form method="get" action='/usuarios/mostrar/{{usuario.id}}'>
+                                <button>Mostrar</button>
+                            </form>
+                            <form method="get" action='/usuarios/editar/{{usuario.id}}'>
+                                <button>Editar</button>
+                            </form>
+                            <form method="post" action='/usuarios/eliminar/{{usuario.id}}'>
+                                <button>Eliminar</button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
             <div>
                 <form method="GET" action='/usuarios/nuevo'>
-                <button>Agregar un Nuevo Usuario</button>
+                <button id="boton-final">Agregar un Nuevo Usuario</button>
                 </form>
             </div>
         </section>

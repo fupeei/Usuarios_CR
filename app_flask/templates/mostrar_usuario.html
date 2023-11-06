@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mostrar_usuario.css') }}">
+        <title>Mostrar Usuario</title>
+    </head>
+    <body>
+        <section>
+            <div class="titulo">
+                <h2>Información Usuario: {{usuario.id}} </h2>
+                <h2><a href="{{ url_for('index') }}">Home</a></h2>
+            </div>
+            <div class="info-contenedor">
+                <h2>Nombre: {{usuario.nombre}} </h2>
+                <h2>Apellido: {{usuario.apellido}} </h2>
+                <h2>Email: {{usuario.email}}</h2>
+                <h2>Fecha Creación: {{usuario.created_at}}</h2>
+                <h2>Ultima Actualización: {{usuario.updated_at}}</h2>
+            </div>
+            <div id="botones">
+                <form method="get" action='/usuarios/editar/{{usuario.id}}'>
+                    <button class="boton">Editar</button>
+                </form>
+                <form method="post" action='/usuarios/eliminar/{{usuario.id}}'>
+                    <button class="boton" >Eliminar</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

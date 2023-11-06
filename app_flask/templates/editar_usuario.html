@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/editar_usuario.css') }}">
+        <title>Editar Usuario</title>
+    </head>
+    <body>
+        <section>
+            <div class="titulo">
+                <h1>Editar Usuario: {{usuario.id}} </h1>
+                <h2><a href="{{ url_for('index') }}">Home</a></h2>
+            </div>
+            <div class="formulario">
+                <form method="post" action='/procesar/editar/usuario/{{usuario.id}}'>
+                    <label  for="nombre">Nombre</label>
+                    <input type="text" value="{{usuario.nombre}}" name="nombre">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" value="{{usuario.apellido}}" name="apellido">
+                    <label for="email">Email</label>
+                    <input type="text" value="{{usuario.email}}" name="email">
+                    <button>Confirmar</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

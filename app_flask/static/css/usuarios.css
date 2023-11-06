@@ -2,3 +2,44 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#botones{
+    display: flex;
+}
+table{
+    border: 2px gray solid;
+    border-collapse: collapse;
+    text-align: center;
+}
+table tr, th, td {
+    border:2px gray solid ;
+    height: 50px;
+    justify-content: center;
+    padding: 10px;
+}
+table td:last-child{
+    width: 300px;
+    justify-content: center;
+    gap: 10px;
+}
+table td:first-child{
+    width: 50px;
+}
+
+button{
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+}
+#boton-final{
+    width: 300px;
+    margin-top: 30px;
+    font-size: 20px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+}
