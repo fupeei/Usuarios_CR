@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/usuarios.css') }}">
+        <title>Usuarios CR</title>
+    </head>
+    <body>
+        <section class="titulo">
+            <h1>Todos los Usuarios!</h1>
+        </section>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Email</th>
+                        <th>Fecha de Creación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for usuario in lista_usuarios %}
+                    <tr>
+                        <td>{{usuario.id}} </td>
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.apellido}}</td>
+                        <td>{{usuario.email}}</td>
+                        <td>{{usuario.created_at}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                <form method="GET" action='/usuarios/nuevo'>
+                <button>Agregar un Nuevo Usuario</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

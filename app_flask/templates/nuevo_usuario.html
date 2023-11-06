@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ES">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/nuevo_usuarios.css') }}">
+        <title>Nuevo Usuario</title>
+    </head>
+    <body>
+        <section>
+            <h1>Agrega un Nuevo Usuario</h1>
+        </section>
+        <section>
+            <div>
+                <form method="post" action='/procesar/usuario'>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text"  name="nombre"
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido">
+                    <label for="email">Email</label>
+                    <input type="text" name="email">
+
+                    <button>Crear</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
